@@ -49,7 +49,8 @@ IPA_DIR = ROOT / "ipas"
 FEED_PATH = ROOT / "apps.json"
 LATEST_PATH = ROOT / "LATEST-BUILD.md"
 
-RAW_BASE = f"https://raw.githubusercontent.com/{FEED_OWNER}/{FEED_REPO}/{FEED_BRANCH}"
+RAW_BASE = (os.environ.get("FEED_BASE_URL")
+            or f"https://casperong.is-a.dev/{FEED_REPO}")
 
 # Everything about the app that does not change from build to build.
 APP = {
@@ -202,12 +203,20 @@ Built from [`{SOURCE_REPO}`](https://github.com/{SOURCE_REPO}) release `{SOURCE_
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--ipa", metavar="PATH",
+                        help="Use a local IPA instead of downloading the release. The app "
+                             "repository's CI has the artefact already, so it passes it here "
+                             "rather than making this script fetch what it just built.")
     parser.add_argument("--force", action="store_true",
                         help="Rewrite the feed even when it already describes this build")
     args = parser.parse_args()
 
-    url = release_download_url(SOURCE_TAG, SOURCE_ASSET)
-    ipa_bytes = download(url)
+    if args.ipa:
+        log(f"Using the local IPA at {args.ipa}")
+        ipa_bytes = Path(args.ipa).read_bytes()
+    else:
+        url = release_download_url(SOURCE_TAG, SOURCE_ASSET)
+        ipa_bytes = download(url)
     info = read_ipa_info(ipa_bytes)
 
     version = info.get("CFBundleShortVersionString", "1.0")
