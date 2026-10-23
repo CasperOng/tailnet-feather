@@ -1,0 +1,35 @@
+{
+  "name": "Tailnet",
+  "subtitle": "Tailscale and Headscale client",
+  "description": "Unsigned Tailnet builds for signing with Feather.",
+  "iconURL": "https://casperong.github.io/tailnet-feather/icons/Tailnet.png",
+  "tintColor": "#0A84FF",
+  "apps": [
+    {
+      "name": "Tailnet",
+      "bundleIdentifier": "com.casperong.tailnet",
+      "developerName": "Casper Ong",
+      "subtitle": "Tailscale and Headscale client",
+      "localizedDescription": "A Tailscale and Headscale client for iPad. Point it at your own coordination server and it joins your tailnet. Connects to directly reachable peers; DERP relay fallback is not implemented yet.",
+      "iconURL": "https://casperong.github.io/tailnet-feather/icons/Tailnet.png",
+      "tintColor": "#0A84FF",
+      "category": "utilities",
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "versions": [
+        {
+          "version": "1.0",
+          "buildVersion": "2",
+          "date": "2026-10-23",
+          "localizedDescription": "Version 1.0 (build 2) \u2014 unsigned, ready to sign with Feather.",
+          "downloadURL": "https://casperong.github.io/tailnet-feather/ipas/Tailnet-unsigned.ipa",
+          "size": 2233757,
+          "sha256": "346fb66471a171d32453bef7b0966aab13bc3eee210cf82f05b0a1e126fa20e5",
+          "minOSVersion": "17.0"
+        }
+      ]
+    }
+  ]
+}
