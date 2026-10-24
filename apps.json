@@ -21,12 +21,12 @@
       "versions": [
         {
           "version": "1.0",
-          "buildVersion": "6",
-          "date": "2026-10-23",
-          "localizedDescription": "Version 1.0 (build 6) \u2014 unsigned, ready to sign with Feather.",
-          "downloadURL": "https://casperong.is-a.dev/tailnet-feather/ipas/Tailnet-1.0-6.ipa",
-          "size": 3070044,
-          "sha256": "d5f4b5d52dd5daf72a614f6a5e9fcfc97287890cedba689188563726ee76ef19",
+          "buildVersion": "7",
+          "date": "2026-10-24",
+          "localizedDescription": "Version 1.0 (build 7) \u2014 unsigned, ready to sign with Feather.",
+          "downloadURL": "https://casperong.is-a.dev/tailnet-feather/ipas/Tailnet-1.0-7.ipa",
+          "size": 3069826,
+          "sha256": "9b11c7b0ba3d48c6e9c719543bd552b5f194c475f629a98ad9d2771f49760746",
           "minOSVersion": "26.0"
         }
       ]
